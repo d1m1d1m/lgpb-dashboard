@@ -18,6 +18,7 @@ const MenuItem: FC<MenuItemProps> = ({ href, icon, text }) => {
                 className={({ isActive }) => {
                     return [
                         `relative flex items-center rounded-lg p-3 text-rio-grande-900 hover:bg-rio-grande-300`,
+                        expand ? "overflow-hidden" : "overflow-visible",
                         `group`,
                         isActive ? "bg-rio-grande-300" : ""
                     ].join(" ")
