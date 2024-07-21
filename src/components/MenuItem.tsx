@@ -1,5 +1,4 @@
 import { FC, ReactNode } from "react";
-import { useSidebarContext } from "../context/useSidebarContext";
 import { NavLink } from "react-router-dom";
 
 type MenuItemProps = {
@@ -9,8 +8,6 @@ type MenuItemProps = {
 };
 
 const MenuItem: FC<MenuItemProps> = ({ href, icon, text }) => {
-    const { expand } = useSidebarContext();
-
     return (
         <li className="text-nowrap overflow-hidden my-1">
             <NavLink
@@ -23,10 +20,7 @@ const MenuItem: FC<MenuItemProps> = ({ href, icon, text }) => {
                 }}
             >
                 {icon && <span className="">{icon}</span>}
-                <span className={`
-                    ml-3 overflow-hidden
-                    ${expand && "w-0 transition-width hidden"}
-                `}>{text}</span>
+                <span className="ml-3 overflow-hidden">{text}</span>
             </NavLink>
         </li>
     );

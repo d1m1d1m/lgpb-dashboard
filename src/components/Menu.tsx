@@ -18,8 +18,8 @@ const Menu: FC<MenuProps> = ({ title, items }) => {
         <nav className="flex flex-col px-4 py-3 w-full">
             {title && (
                 <span className={`
-                    mb-2 px-2 text-xs font-bold uppercase text-rose-900 
-                    ${expand ? "opacity-0  transition-opacity" : "opacity-100"}
+                    mb-2 px-2 text-xs font-bold uppercase text-rose-900
+                    ${expand ? "opacity-100" : "opacity-0 transition-opacity"}
                 `}>
                     {title}
                 </span>
