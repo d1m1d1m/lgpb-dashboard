@@ -9,18 +9,20 @@ import {
     Settings,
     Users,
 } from "lucide-react";
-import Menu from "./Menu";
-import SidebarHeader from "./SidebarHeader";
-import SidebarFooter from "./SidebarFooter";
-import SidebarWrapper from "./SidebarWrapper";
+import Menu from "../Menu";
+import SidebarHeader from "../Sidebar/SidebarHeader";
+import SidebarFooter from "../Sidebar/SidebarFooter";
+import { useSidebarContext } from "../../context/useSidebarContext";
 
 const Sidebar: FC = () => {
+    const { setClassNames } = useSidebarContext();
+
     return (
-        <SidebarWrapper
-            className="flex flex-col h-full bg-rio-grande-50 shadow-xl transition-width"
-            expandedClassName="w-64"
-            collapsedClassName="w-20"
-        >
+        <aside className={setClassNames({
+            initial: "flex flex-col h-full shadow-xl transition-width",
+            expanded: "w-64",
+            collapsed: "w-20"
+        })}>
             <SidebarHeader/>
 
             <Menu
@@ -49,9 +51,8 @@ const Sidebar: FC = () => {
                 ]}
             />
 
-            {/* FOOTER */}
             <SidebarFooter />
-        </SidebarWrapper>
+        </aside>
     );
 };
 

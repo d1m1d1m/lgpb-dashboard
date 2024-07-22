@@ -1,6 +1,6 @@
 import { ChevronsLeftRight } from "lucide-react";
-import BrandLogo from "../assets/brand.png";
-import { useSidebarContext } from "../context/useSidebarContext";
+import BrandLogo from "../../assets/brand.png";
+import { useSidebarContext } from "../../context/useSidebarContext";
 import { FC } from "react";
 
 const SidebarHeader: FC = () => {

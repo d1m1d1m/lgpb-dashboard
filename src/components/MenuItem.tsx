@@ -9,28 +9,31 @@ type MenuItemProps = {
 };
 
 const MenuItem: FC<MenuItemProps> = ({ href, icon, text }) => {
-    const {expand} = useSidebarContext();
+    const { setClassNames } = useSidebarContext();
 
     return (
         <li className="text-nowrap my-1">
             <NavLink
                 to={href ? href : "#"}
-                className={({ isActive }) => {
-                    return [
-                        `relative flex items-center rounded-lg p-3 text-rio-grande-900 hover:bg-rio-grande-300`,
-                        expand ? "overflow-hidden" : "overflow-visible",
-                        `group`,
-                        isActive ? "bg-rio-grande-300" : ""
-                    ].join(" ")
-                }}
+                className={({ isActive }) => setClassNames(
+                    {
+                        initial: `relative flex items-center rounded-lg p-3 text-rio-grande-900 ${isActive ? "bg-rio-grande-300" : ""} hover:bg-rio-grande-300`,
+                        expanded: "overflow-visible",
+                        collapsed: "overflow-hidden"
+                    }
+                )}
             >
-                {icon && <span className="">{icon}</span>}
-                <span className={`
-                    ml-3
-                    ${expand ? "" : "opacity-0 group-hover:absolute group-hover:transition-opacity group-hover:opacity-100 group-hover:block group-hover:left-full group-hover:bg-rio-grande-300 group-hover:py-1 group-hover:px-2 group-hover:shadow-md rounded-md"}
-                `}>
-                    {text}
-                </span>
+                {icon && <span>{icon}</span>}
+                <span
+                    children={text}
+                    className={setClassNames(
+                        {
+                            initial: "ml-3",
+                            expanded: "",
+                            collapsed: "opacity-0 group-hover:absolute group-hover:transition-opacity group-hover:opacity-100 group-hover:left-full group-hover:bg-rio-grande-300 group-hover:py-1 group-hover:px-2 group-hover:shadow-md rounded-md"
+                        }
+                    )}
+                />
             </NavLink>
         </li>
     );

@@ -12,15 +12,16 @@ type MenuProps = {
 };
 
 const Menu: FC<MenuProps> = ({ title, items }) => {
-    const { expand } = useSidebarContext();
+    const { setClassNames } = useSidebarContext();
 
     return (
         <nav className="flex flex-col px-4 py-3 w-full">
             {title && (
-                <span className={`
-                    mb-2 px-2 text-xs font-bold uppercase text-rose-900
-                    ${expand ? "opacity-100" : "opacity-0 transition-opacity"}
-                `}>
+                <span className={setClassNames({
+                    initial: "mb-2 px-2 text-xs font-bold uppercase text-rose-900 transition-opacity",
+                    expanded: "opacity-100",
+                    collapsed: "opacity-0"
+                })}>
                     {title}
                 </span>
             )}
