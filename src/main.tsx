@@ -1,15 +1,10 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import DashboardView from "./views/Dashboard.tsx";
-import TeamView from "./views/Team.tsx";
-import TasksView from "./views/Tasks.tsx";
-import StatsView from "./views/Stats.tsx";
-import App from "./App.tsx";
+import { Fragment } from "react/jsx-runtime";
+import Sidebar from "./components_v2/Sidebar";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-    <React.StrictMode>
+{
+	/* <React.StrictMode>
         <BrowserRouter>
             <App>
                 <Routes>
@@ -20,5 +15,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                 </Routes>
             </App>
         </BrowserRouter>
-    </React.StrictMode>,
+    </React.StrictMode> */
+}
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+	<Fragment>
+		<Sidebar />
+	</Fragment>,
 );
