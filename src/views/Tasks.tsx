@@ -1,11 +1,13 @@
-import Section from "../components/Section";
+import Section from "../components/Section/Section";
 
 const TasksView = () => {
-    return (
-        <Section>
-            <h1 className="flex items-center min-h-28 font-amatic font-bold text-5xl px-12">Tasks</h1>
-        </Section>
-    );
+	return (
+		<Section>
+			<h1 className="flex min-h-28 items-center px-12 font-amatic text-5xl font-bold">
+				Tasks
+			</h1>
+		</Section>
+	);
 };
 
 export default TasksView;
