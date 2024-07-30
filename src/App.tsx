@@ -1,16 +1,11 @@
-import { SidebarProvider } from "./context/useSidebarContext";
-import { FC, Fragment, PropsWithChildren } from "react";
-import Sidebar from "./components/Sidebar/Sidebar";
+import { FC, Fragment } from "react";
+import Navbar from "./components/Navbar/Navbar";
 
-const App: FC<PropsWithChildren> = ({ children }) => {
+const App: FC = () => {
 	return (
-		<SidebarProvider>
-			<Fragment>
-				<Sidebar />
-
-				{children}
-			</Fragment>
-		</SidebarProvider>
+		<Fragment>
+			<Navbar />
+		</Fragment>
 	);
 };
 

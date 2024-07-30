@@ -1,8 +1,8 @@
 import { FC } from "react";
 
-type BrandLogoProps = React.SVGProps<SVGSVGElement>;
+type BrandIconProps = React.SVGProps<SVGSVGElement>;
 
-const BrandLogo: FC<BrandLogoProps> = (props) => (
+const BrandIcon: FC<BrandIconProps> = (props) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		width="96"
@@ -38,4 +38,4 @@ const BrandLogo: FC<BrandLogoProps> = (props) => (
 		</defs>
 	</svg>
 );
-export default BrandLogo;
+export default BrandIcon;
